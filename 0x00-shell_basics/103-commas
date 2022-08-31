@@ -1,2 +1,2 @@
 #!/bin/bash
-ls -a --format=comma | head -6 
+ls -amp --format=comma 
