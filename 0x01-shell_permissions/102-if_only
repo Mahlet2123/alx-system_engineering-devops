@@ -1,2 +1,2 @@
 #!/bin/bash
-if guillaume then; chown betty hello 
+find / -user guillaumer:chown betty hello 
