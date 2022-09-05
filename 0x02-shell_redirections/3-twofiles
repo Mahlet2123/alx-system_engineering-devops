@@ -1,2 +1,2 @@
 #!/bin/bash
-echo "Hello, World" 
+grep -B /etc/passwd:/etc/hosts 
