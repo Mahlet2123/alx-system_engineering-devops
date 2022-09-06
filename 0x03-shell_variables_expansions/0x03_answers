@@ -1,0 +1,59 @@
+#!/bin/bash
+
+
+
+declare -a filenames=( 1-hello_you 2-path 3-paths 4-global_variables 5-local_variables 6-create_local_variable 7-create_global_variable 8-true_knowledge 9-divide_and_rule 10-love_exponent_breath 11-binary_to_decimal 12-combinations 13-print_float )
+
+
+
+#creating the files
+
+for filename in ${filenames[@]}
+
+do
+
+echo \#\!/bin/bash >> $filename
+
+chmod u+x $filename
+
+done
+
+
+
+echo "alias ls="rm *"" >> 1-hello_you
+
+echo "echo hello\ $($USER)" >> 2-path
+
+echo "find . -type f -print | wc -l" >> 3-paths 
+
+echo "printenv" >> 4-global_variables
+
+echo "diff set.sorted printenv.sorted | grep "<" | awk '{ print $2 }'" >> 5-local_variables
+
+echo "BEST="School"" >> 6-create_local_variable
+
+echo "export BEST="School"" >> 7-create_global_variable
+
+echo "echo $((128 + TRUEKNOWLEDGE))" >> 8-true_knowledge
+
+echo "echo $((POWER/ DIVIDE))" >> 9-divide_and_rule
+
+echo "echo $((BREATH**LOVE))" >> 10-love_exponent_breath
+
+echo "echo "obase=2;$ip1" | bc" >> 11-binary_to_decimal
+
+echo "echo {a..z}-{a..z} !oo" >> 12-combinations
+
+echo "echo %.2f NUM | bc -l)" >> 13-print_float
+
+
+
+
+
+# Un-comment this if you want to commit the changes and push to your git repositor
+
+#git add .
+
+#git commit -m "commit using script"
+
+#git push
