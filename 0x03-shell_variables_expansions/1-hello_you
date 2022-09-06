@@ -1,2 +1,2 @@
 #!/bin/bash
-echo hello My$(id -un)
+echo hello $(id -un)
