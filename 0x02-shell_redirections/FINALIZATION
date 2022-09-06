@@ -1,0 +1,53 @@
+#!/bin/bash
+
+
+
+declare -a filenames=( 14-findthatword 15-countthatword 16-whatsnext 17-hidethisword 18-letteronly 19-AZ 20-hiago 21-reverse 22-users_and_homes )
+
+
+
+
+#creating the files
+
+for filename in ${filenames[@]}
+
+do
+
+echo \#\!/bin/bash >> $filename
+
+chmod u+x $filename
+
+done
+
+
+
+
+echo "grep "root" /etc/passwd" >> 14-findthatword
+
+echo "grep -c "bin" /etc/passwd" >> 15-countthatword
+
+echo "grep -A 3 "root" /etc/passwd" >> 16-whatsnext
+
+echo "grep -v "bin" /etc/passwd" >> 17-hidethisword
+
+echo "grep ^[[:alpha:]] /etc/ssh/sshd_config" >> 18-letteronly
+
+echo "tr 'A' 'Z' | tr 'c' 'e'" >> 19-AZ
+
+echo "tr -d "Cc"" >> 20-hiago
+
+echo "rev" >> 21-reverse
+
+echo "cut -d: -f 1,6 /etc/passwd | sort" >> 22-users_and_homes
+
+
+
+
+
+# Un-comment this if you want to commit the changes and push to your git repositor
+
+#git add .
+
+#git commit -m "commit using script"
+
+#git push
