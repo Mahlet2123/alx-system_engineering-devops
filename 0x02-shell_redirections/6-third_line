@@ -1,2 +1,0 @@
-#!/bin/bash
-cat iacta | head --lines=3 | tail --lines=1
