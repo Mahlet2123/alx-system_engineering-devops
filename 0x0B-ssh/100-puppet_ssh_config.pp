@@ -2,7 +2,7 @@
 
 file { 'config':
   ensure  => file,
-  path    => '~/.ssh/config'
+  path    => '~/.ssh/config',
   content => '
 
 Host *
@@ -11,5 +11,6 @@ Host *
 Host myserver
     Hostname 54.90.3.149
     User ubuntu
-    IdentityFile ~/.ssh/school'
+    IdentityFile ~/.ssh/school
+',
 }
