@@ -53,18 +53,45 @@ debug1: Authentications that can continue: publickey
 debug1: Next authentication method: publickey
 debug1: Offering public key: /root/.ssh/id_rsa RSA SHA256:4rqMc/pZnlEKm3sLuoPBBanJzdVQ5T1RXqgonlpGgpI
 debug1: Server accepts key: /root/.ssh/id_rsa RSA SHA256:4rqMc/pZnlEKm3sLuoPBBanJzdVQ5T1RXqgonlpGgpI
-@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-@         WARNING: UNPROTECTED PRIVATE KEY FILE!          @
-@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-Permissions 0644 for '/root/.ssh/id_rsa' are too open.
-It is required that your private key files are NOT accessible by others.
-This private key will be ignored.
-Load key "/root/.ssh/id_rsa": bad permissions
-debug1: Trying private key: /root/.ssh/id_dsa
-debug1: Trying private key: /root/.ssh/id_ecdsa
-debug1: Trying private key: /root/.ssh/id_ecdsa_sk
-debug1: Trying private key: /root/.ssh/id_ed25519
-debug1: Trying private key: /root/.ssh/id_ed25519_sk
-debug1: Trying private key: /root/.ssh/id_xmss
-debug1: No more authentication methods to try.
-ubuntu@54.172.174.95: Permission denied (publickey).
+debug1: Authentication succeeded (publickey).
+Authenticated to 54.172.174.95 ([54.172.174.95]:22).
+debug1: channel 0: new [client-session]
+debug1: Requesting no-more-sessions@openssh.com
+debug1: Entering interactive session.
+debug1: pledge: network
+debug1: client_input_global_request: rtype hostkeys-00@openssh.com want_reply 0
+debug1: Remote: /home/ubuntu/.ssh/authorized_keys:2: key options: agent-forwarding port-forwarding pty user-rc x11-forwarding
+debug1: Remote: /home/ubuntu/.ssh/authorized_keys:2: key options: agent-forwarding port-forwarding pty user-rc x11-forwarding
+debug1: Sending environment.
+debug1: Sending env LANG = en_US.UTF-8
+debug1: Sending env LC_ALL = en_US.UTF-8
+Welcome to Ubuntu 20.04.5 LTS (GNU/Linux 5.15.0-1021-aws x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+  System information as of Sun Mar 26 20:42:15 UTC 2023
+
+  System load:  0.03              Processes:             99
+  Usage of /:   9.2% of 19.20GB   Users logged in:       0
+  Memory usage: 19%               IPv4 address for eth0: 10.247.64.44
+  Swap usage:   0%
+
+ * Ubuntu Pro delivers the most comprehensive open source security and
+   compliance features.
+
+   https://ubuntu.com/aws/pro
+
+0 updates can be applied immediately.
+
+
+The list of available updates is more than a week old.
+To check for new updates run: sudo apt update
+New release '22.04.2 LTS' available.
+Run 'do-release-upgrade' to upgrade to it.
+
+
+Last login: Sun Mar 26 20:41:16 2023 from 34.227.15.39
+To run a command as administrator (user "root"), use "sudo <command>".
+See "man sudo_root" for details.
