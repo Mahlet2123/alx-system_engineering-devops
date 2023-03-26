@@ -4,7 +4,7 @@ debug1: /root/.ssh/config line 1: Applying options for *
 debug1: Reading configuration data /etc/ssh/ssh_config
 debug1: /etc/ssh/ssh_config line 19: include /etc/ssh/ssh_config.d/*.conf matched no files
 debug1: /etc/ssh/ssh_config line 21: Applying options for *
-debug1: Connecting to 54.172.174.95 [54.172.174.95] port 22.
+debug1: Connecting to 54.90.3.149 [54.90.3.149] port 22.
 debug1: Connection established.
 debug1: identity file /root/.ssh/id_rsa type 0
 debug1: identity file /root/.ssh/id_rsa-cert type -1
@@ -23,7 +23,7 @@ debug1: identity file /root/.ssh/id_xmss-cert type -1
 debug1: Local version string SSH-2.0-OpenSSH_8.2p1 Ubuntu-4ubuntu0.4
 debug1: Remote protocol version 2.0, remote software version OpenSSH_8.2p1 Ubuntu-4ubuntu0.5
 debug1: match: OpenSSH_8.2p1 Ubuntu-4ubuntu0.5 pat OpenSSH* compat 0x04000000
-debug1: Authenticating to 54.172.174.95:22 as 'ubuntu'
+debug1: Authenticating to 54.90.3.149:22 as 'ubuntu'
 debug1: SSH2_MSG_KEXINIT sent
 debug1: SSH2_MSG_KEXINIT received
 debug1: kex: algorithm: curve25519-sha256
@@ -31,15 +31,15 @@ debug1: kex: host key algorithm: ecdsa-sha2-nistp256
 debug1: kex: server->client cipher: chacha20-poly1305@openssh.com MAC: <implicit> compression: none
 debug1: kex: client->server cipher: chacha20-poly1305@openssh.com MAC: <implicit> compression: none
 debug1: expecting SSH2_MSG_KEX_ECDH_REPLY
-debug1: Server host key: ecdsa-sha2-nistp256 SHA256:HoYnuBid7Ee330u7fIyFmHy5w+hVgok8uD9iwO2PE9s
-debug1: Host '54.172.174.95' is known and matches the ECDSA host key.
-debug1: Found key in /root/.ssh/known_hosts:1
+debug1: Server host key: ecdsa-sha2-nistp256 SHA256:o2TN/IUQlaJxZaxBamuwwzMrKI9WFrYufhR2bEAr0GA
+debug1: Host '54.90.3.149' is known and matches the ECDSA host key.
+debug1: Found key in /root/.ssh/known_hosts:2
 debug1: rekey out after 134217728 blocks
 debug1: SSH2_MSG_NEWKEYS sent
 debug1: expecting SSH2_MSG_NEWKEYS
 debug1: SSH2_MSG_NEWKEYS received
 debug1: rekey in after 134217728 blocks
-debug1: Will attempt key: /root/.ssh/id_rsa RSA SHA256:4rqMc/pZnlEKm3sLuoPBBanJzdVQ5T1RXqgonlpGgpI
+debug1: Will attempt key: /root/.ssh/id_rsa RSA SHA256:4rqMc/pZnlEKm3sLuoPBBanJzdVQ5T1RXqgonlpGgpI agent
 debug1: Will attempt key: /root/.ssh/id_dsa 
 debug1: Will attempt key: /root/.ssh/id_ecdsa 
 debug1: Will attempt key: /root/.ssh/id_ecdsa_sk 
@@ -51,10 +51,70 @@ debug1: kex_input_ext_info: server-sig-algs=<ssh-ed25519,sk-ssh-ed25519@openssh.
 debug1: SSH2_MSG_SERVICE_ACCEPT received
 debug1: Authentications that can continue: publickey
 debug1: Next authentication method: publickey
-debug1: Offering public key: /root/.ssh/id_rsa RSA SHA256:4rqMc/pZnlEKm3sLuoPBBanJzdVQ5T1RXqgonlpGgpI
-debug1: Server accepts key: /root/.ssh/id_rsa RSA SHA256:4rqMc/pZnlEKm3sLuoPBBanJzdVQ5T1RXqgonlpGgpI
+debug1: Offering public key: /root/.ssh/id_rsa RSA SHA256:4rqMc/pZnlEKm3sLuoPBBanJzdVQ5T1RXqgonlpGgpI agent
+debug1: Server accepts key: /root/.ssh/id_rsa RSA SHA256:4rqMc/pZnlEKm3sLuoPBBanJzdVQ5T1RXqgonlpGgpI agent
 debug1: Authentication succeeded (publickey).
-Authenticated to 54.172.174.95 ([54.172.174.95]:22).
+Authenticated to 54.90.3.149 ([54.90.3.149]:22).
+debug1: channel 0: new [client-session]
+debug1: Requesting no-more-sessions@openssh.com
+root@1e32825e08d6:~/.ssh# ssh -v ubuntu@54.90.3.149
+OpenSSH_8.2p1 Ubuntu-4ubuntu0.4, OpenSSL 1.1.1f  31 Mar 2020
+debug1: Reading configuration data /root/.ssh/config
+debug1: /root/.ssh/config line 1: Applying options for *
+debug1: Reading configuration data /etc/ssh/ssh_config
+debug1: /etc/ssh/ssh_config line 19: include /etc/ssh/ssh_config.d/*.conf matched no files
+debug1: /etc/ssh/ssh_config line 21: Applying options for *
+debug1: Connecting to 54.90.3.149 [54.90.3.149] port 22.
+debug1: Connection established.
+debug1: identity file /root/.ssh/id_rsa type 0
+debug1: identity file /root/.ssh/id_rsa-cert type -1
+debug1: identity file /root/.ssh/id_dsa type -1
+debug1: identity file /root/.ssh/id_dsa-cert type -1
+debug1: identity file /root/.ssh/id_ecdsa type -1
+debug1: identity file /root/.ssh/id_ecdsa-cert type -1
+debug1: identity file /root/.ssh/id_ecdsa_sk type -1
+debug1: identity file /root/.ssh/id_ecdsa_sk-cert type -1
+debug1: identity file /root/.ssh/id_ed25519 type -1
+debug1: identity file /root/.ssh/id_ed25519-cert type -1
+debug1: identity file /root/.ssh/id_ed25519_sk type -1
+debug1: identity file /root/.ssh/id_ed25519_sk-cert type -1
+debug1: identity file /root/.ssh/id_xmss type -1
+debug1: identity file /root/.ssh/id_xmss-cert type -1
+debug1: Local version string SSH-2.0-OpenSSH_8.2p1 Ubuntu-4ubuntu0.4
+debug1: Remote protocol version 2.0, remote software version OpenSSH_8.2p1 Ubuntu-4ubuntu0.5
+debug1: match: OpenSSH_8.2p1 Ubuntu-4ubuntu0.5 pat OpenSSH* compat 0x04000000
+debug1: Authenticating to 54.90.3.149:22 as 'ubuntu'
+debug1: SSH2_MSG_KEXINIT sent
+debug1: SSH2_MSG_KEXINIT received
+debug1: kex: algorithm: curve25519-sha256
+debug1: kex: host key algorithm: ecdsa-sha2-nistp256
+debug1: kex: server->client cipher: chacha20-poly1305@openssh.com MAC: <implicit> compression: none
+debug1: kex: client->server cipher: chacha20-poly1305@openssh.com MAC: <implicit> compression: none
+debug1: expecting SSH2_MSG_KEX_ECDH_REPLY
+debug1: Server host key: ecdsa-sha2-nistp256 SHA256:o2TN/IUQlaJxZaxBamuwwzMrKI9WFrYufhR2bEAr0GA
+debug1: Host '54.90.3.149' is known and matches the ECDSA host key.
+debug1: Found key in /root/.ssh/known_hosts:2
+debug1: rekey out after 134217728 blocks
+debug1: SSH2_MSG_NEWKEYS sent
+debug1: expecting SSH2_MSG_NEWKEYS
+debug1: SSH2_MSG_NEWKEYS received
+debug1: rekey in after 134217728 blocks
+debug1: Will attempt key: /root/.ssh/id_rsa RSA SHA256:4rqMc/pZnlEKm3sLuoPBBanJzdVQ5T1RXqgonlpGgpI agent
+debug1: Will attempt key: /root/.ssh/id_dsa 
+debug1: Will attempt key: /root/.ssh/id_ecdsa 
+debug1: Will attempt key: /root/.ssh/id_ecdsa_sk 
+debug1: Will attempt key: /root/.ssh/id_ed25519 
+debug1: Will attempt key: /root/.ssh/id_ed25519_sk 
+debug1: Will attempt key: /root/.ssh/id_xmss 
+debug1: SSH2_MSG_EXT_INFO received
+debug1: kex_input_ext_info: server-sig-algs=<ssh-ed25519,sk-ssh-ed25519@openssh.com,ssh-rsa,rsa-sha2-256,rsa-sha2-512,ssh-dss,ecdsa-sha2-nistp256,ecdsa-sha2-nistp384,ecdsa-sha2-nistp521,sk-ecdsa-sha2-nistp256@openssh.com>
+debug1: SSH2_MSG_SERVICE_ACCEPT received
+debug1: Authentications that can continue: publickey
+debug1: Next authentication method: publickey
+debug1: Offering public key: /root/.ssh/id_rsa RSA SHA256:4rqMc/pZnlEKm3sLuoPBBanJzdVQ5T1RXqgonlpGgpI agent
+debug1: Server accepts key: /root/.ssh/id_rsa RSA SHA256:4rqMc/pZnlEKm3sLuoPBBanJzdVQ5T1RXqgonlpGgpI agent
+debug1: Authentication succeeded (publickey).
+Authenticated to 54.90.3.149 ([54.90.3.149]:22).
 debug1: channel 0: new [client-session]
 debug1: Requesting no-more-sessions@openssh.com
 debug1: Entering interactive session.
@@ -71,17 +131,13 @@ Welcome to Ubuntu 20.04.5 LTS (GNU/Linux 5.15.0-1021-aws x86_64)
  * Management:     https://landscape.canonical.com
  * Support:        https://ubuntu.com/advantage
 
-  System information as of Sun Mar 26 20:42:15 UTC 2023
+  System information as of Sun Mar 26 21:19:18 UTC 2023
 
-  System load:  0.03              Processes:             99
-  Usage of /:   9.2% of 19.20GB   Users logged in:       0
-  Memory usage: 19%               IPv4 address for eth0: 10.247.64.44
+  System load:  0.04              Processes:             98
+  Usage of /:   7.9% of 19.20GB   Users logged in:       0
+  Memory usage: 24%               IPv4 address for eth0: 10.247.88.183
   Swap usage:   0%
 
- * Ubuntu Pro delivers the most comprehensive open source security and
-   compliance features.
-
-   https://ubuntu.com/aws/pro
 
 0 updates can be applied immediately.
 
@@ -92,6 +148,6 @@ New release '22.04.2 LTS' available.
 Run 'do-release-upgrade' to upgrade to it.
 
 
-Last login: Sun Mar 26 20:41:16 2023 from 34.227.15.39
+Last login: Sun Mar 26 21:19:08 2023 from 34.227.15.39
 To run a command as administrator (user "root"), use "sudo <command>".
 See "man sudo_root" for details.
