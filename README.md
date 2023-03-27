@@ -25,7 +25,7 @@ ALX's curriculum for system engineering. These projects are meant to help us lea
 
 ### [0x08. Networking basics #1](./0x08-networking_basics_2)
 
-### [0x09-web_infrastructure_design] (./0x09-web_infrastructure_design)
+### [0x09-web_infrastructure_design](./0x09-web_infrastructure_design)
 
 ### [0x0A. Configuration Management](./0x0A-configuration_management)
 
