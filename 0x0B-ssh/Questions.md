@@ -129,10 +129,30 @@ In the example above, we can see that ssh tries to authenticate using school and
 
 ### 3. Let me in!
 - mandatory
-- Score: 0.0% (Checks completed: 0.0%)
 
 Now that you have successfully connected to your server, we would also like to join the party.
 
 Add the SSH public key below to your server so that we can connect using the ubuntu user.
 
 	ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDNdtrNGtTXe5Tp1EJQop8mOSAuRGLjJ6DW4PqX4wId/Kawz35ESampIqHSOTJmbQ8UlxdJuk0gAXKk3Ncle4safGYqM/VeDK3LN5iAJxf4kcaxNtS3eVxWBE5iF3FbIjOqwxw5Lf5sRa5yXxA8HfWidhbIG5TqKL922hPgsCGABIrXRlfZYeC0FEuPWdr6smOElSVvIXthRWp9cr685KdCI+COxlj1RdVsvIo+zunmLACF9PYdjB2s96Fn0ocD3c5SGLvDOFCyvDojSAOyE70ebIElnskKsDTGwfT4P6jh9OBzTyQEIS2jOaE5RQq4IB4DsMhvbjDSQrP0MdCLgwkN
+
+
+### 4. Client configuration file (w/ Puppet)
+- advanced
+- Score: 100.0% (Checks completed: 100.0%)
+
+Let’s practice using Puppet to make changes to our configuration file. Just as in the previous configuration file task, we’d like you to set up your client SSH configuration file so that you can connect to a server without typing a password.
+
+	Requirements:
+
+	Your SSH client configuration must be configured to use the private key ~/.ssh/school
+	Your SSH client configuration must be configured to refuse to authenticate using a password
+
+Example:
+
+	vagrant@ubuntu:~$ sudo puppet apply 100-puppet_ssh_config.pp
+	Notice: Compiled catalog for ubuntu-xenial in environment production in 0.11 seconds
+	Notice: /Stage[main]/Main/File_line[Turn off passwd auth]/ensure: created
+	Notice: /Stage[main]/Main/File_line[Declare identity file]/ensure: created
+	Notice: Finished catalog run in 0.03 seconds
+	vagrant@ubuntu:~$
