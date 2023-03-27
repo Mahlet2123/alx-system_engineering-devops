@@ -19,18 +19,18 @@ At the end of this project, you are expected to be able to explain to anyone, wi
 
 Write a Bash script that uses ssh to connect to your server using the private key ~/.ssh/school with the user ubuntu.
 
-Requirements:
+	Requirements:
 
-Only use ssh single-character flags
-You cannot use -l
-You do not need to handle the case of a private key protected by a passphrase
+	Only use ssh single-character flags
+	You cannot use -l
+	You do not need to handle the case of a private key protected by a passphrase
 
 ---
 
-sylvain@ubuntu$ ./0-use_a_private_key
-ubuntu@server01:~$ exit
-Connection to 8.8.8.8 closed.
-sylvain@ubuntu$ 
+	sylvain@ubuntu$ ./0-use_a_private_key
+	ubuntu@server01:~$ exit
+	Connection to 8.8.8.8 closed.
+	sylvain@ubuntu$ 
 
 ### 1. Create an SSH key pair
 - mandatory
