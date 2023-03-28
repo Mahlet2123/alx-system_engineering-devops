@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 # a Bash script that configures a new Ubuntu machine- Install nginx
-sudo apt -y update
-sudo apt -y install nginx
+apt -y update
+apt -y install nginx
 echo "Hello World!" > /var/www/html/index.html
+#echo -e "server {\n \tlisten\t80;\n \troot \t/var/www/mysite; \n\tlocation / {\n  \t\troot\t/var/www/mysite;\n\t}\n}\t" > /etc/nginx/conf.d/mysite.conf
 service nginx start
