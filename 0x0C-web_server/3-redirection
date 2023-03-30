@@ -1,3 +1,10 @@
 #!/usr/bin/env bash
+# a Bash script that configures a new Ubuntu machine- Install nginx
+apt -y update
+apt -y install nginx
+echo "Hello World!" > /var/www/html/index.html
 # Configure your Nginx server so that /redirect_me is redirecting to another page.
-Redirect 301 http://www.youtube.com/watch?v=QH2-TGUlwu4
+#return 301 http://www.youtube.com/watch?v=QH2-TGUlwu4" >> /etc/nginx/nginx.conf
+sed -i "/server_name _;/ a\\\trewrite ^/redirect_me https://ansi.org permanent;" /etc/nginx/sites-available/default
+
+service nginx start
