@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # Configure Nginx so that its HTTP response contains a custom header
 HEADER="\\\n\tadd_header X-Served-By \$HOSTNAME;\n"
-SRC="/etc/nginx/nginx.conf"
+SRC="/etc/nginx/sites-available/default"
 sudo sed -i "64i $HEADER" $SRC
 sudo service nginx restart
