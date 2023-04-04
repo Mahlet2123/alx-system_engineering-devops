@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# # install nginx to create html pages - 404
+# install nginx to create html pages - 404
 
 sudo apt-get -y update
 sudo apt-get -y install nginx
