@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Script that installs Nginx server, redirects /redirect_me and customizes 404 not found
+# # install nginx to create html pages - 404
 
 sudo apt-get -y update
 sudo apt-get -y install nginx
