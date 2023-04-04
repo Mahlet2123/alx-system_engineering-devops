@@ -4,7 +4,6 @@ REDIR="\\\tlocation /redirect_me {\n\t\t return 301 https://www.youtube.com/watc
 SRC="/etc/nginx/sites-available/default"
 apt-get -y update
 apt-get -y install nginx
-sudo service nginx start
 echo "Hello World!" > /var/www/html/index.html
 sudo sed -i "30i $REDIR" $SRC
-sudo service nginx restart
+sudo service nginx start
