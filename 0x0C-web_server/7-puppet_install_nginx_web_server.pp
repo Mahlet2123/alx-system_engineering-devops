@@ -1,6 +1,40 @@
 # Installs a Nginx server
 
-exec {'install':
-  provider => shell,
-  command  => 'sudo apt-get -y update ; sudo apt-get -y install nginx ; echo "Hello World!" | sudo tee /var/www/html/index.html ; sudo sed -i "s/server_name _;/server_name _;\n\trewrite ^\/redirect_me https://www.youtube.com permanent;/" /etc/nginx/sites-available/default ; sudo service nginx start',
+# define the package to install
+package { 'nginx':
+  ensure => installed,
+}
+
+#define the service to manage
+service { 'nginx':
+  ensure => running,
+  enable => true,
+}
+
+#define the nginx configuration
+file { '/etc/nginx/sites-available/default':
+  content => "
+  server {
+    listen 80;
+    server_name localhost;
+
+  location / {
+    root /var/www/html;
+    index index.html;
+    return 301 https://example.com;
+  }
+
+  location /redirect_me {
+    return 301 https://example.com/new_location;
+  }
+}
+"
+  require => Package['nginx'],
+  notify  => Service['nginx'],
+}
+
+#define the index.html file to serve
+file { '/var/www/html/index.html':
+  content => Hello World!,
+  require => Package['nginx'],
 }
