@@ -5,36 +5,26 @@ package { 'nginx':
   ensure => installed,
 }
 
-#define the service to manage
+#write 'Hello World!' to the index.html file 
+file { '/var/www/html/index.html':
+  content => Hello World!,
+}
+
+# Configure Nginx to listen on port 80 and perform a redirect
+class { 'nginx':
+  default_site_enabled => true,
+}
+
+nginx::resource::vhost { 'default':
+  listen_port => '80',
+  proxy       => false,
+  rewrite     => [
+    '^/redirect_me https://www.youtube.com permanent',
+  ],
+}
+
+# Start Nginx service
 service { 'nginx':
   ensure => running,
   enable => true,
-}
-
-#define the nginx configuration
-file { '/etc/nginx/sites-available/default':
-  content => "
-  server {
-    listen 80;
-    server_name localhost;
-
-  location / {
-    root /var/www/html;
-    index index.html;
-    return 301 https://example.com;
-  }
-
-  location /redirect_me {
-    return 301 https://example.com/new_location;
-  }
-}
-"
-  require => Package['nginx'],
-  notify  => Service['nginx'],
-}
-
-#define the index.html file to serve
-file { '/var/www/html/index.html':
-  content => Hello World!,
-  require => Package['nginx'],
 }
