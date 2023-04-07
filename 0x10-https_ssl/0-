@@ -9,11 +9,13 @@ fi
 domain="$1"
 # Function to output record type and destination
 function get_record_info {
-  record_type=$(dig "$1" "$2" | awk '/ANSWER SECTION:/ { getline; {print $4}}')
-  destination=$(dig "$1" "$2" | awk '/ANSWER SECTION:/ { getline; {print $5}}')
+  record_type=$(dig ".$1" | awk '/ANSWER SECTION:/ { getline; split($1, a, "."); {print $4}}')
+  destination=$(dig "$subdomains.$1" | awk '/ANSWER SECTION:/ { getline; split($1, a, "."); {print $5}}')
   echo "The subdomain $2 is a $record_type record and points to $destination"
 }
 # Loop through subdomains and output record info
 for subdomain in "${subdomains[@]}"; do
   get_record_info "$domain" "$subdomain"
 done
+
+echo"$(dig $1)"
