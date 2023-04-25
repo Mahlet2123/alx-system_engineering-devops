@@ -10,11 +10,11 @@ import requests
 def make_all(users=None, todos=None):
     """Turns payloads into JSON format"""
     data = {}
-    for i in users:
-        u = i.get("id")
+    for user in users:
+        u = user.get("id")
         for i in todos:
             if u == i.get("userId"):
-                name = users[0].get("username")
+                name = user.get("username")
                 i["username"] = name
                 i["task"] = i.pop("title")
                 i["completed"] = i.pop("completed")
