@@ -10,12 +10,12 @@ import sys
 if __name__ == "__main__":
     url = "https://jsonplaceholder.typicode.com/"
     url_todo = url + "todos"
-    url_name = url_todo+ "users/{}".format(sys.argv[1])
+    url_name = url + "users/{}".format(sys.argv[1])
 
     params = {"userId": sys.argv[1]}
 
-    todo_response = requests.get(url_todo, params=params).json()
-    name_response = requests.get(url_name).json()
+    todo_response = requests.get(url=url_todo, params=params).json()
+    name_response = requests.get(url=url_name).json()
 
     completed = []
     for todo in todo_response:
