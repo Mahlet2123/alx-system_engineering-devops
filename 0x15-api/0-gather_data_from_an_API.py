@@ -15,7 +15,8 @@ if __name__ == "__main__":
     todo_response = requests.get(url_todo)
     name_response = requests.get(url_name).json()
     todo_list = todo_response.json()
-    EMPLOYEE_NAME = name_response[0]["name"]
+    for i in name_response:
+        EMPLOYEE_NAME = i.get('name').strip()
     NUMBER_OF_DONE_TASKS = 0
     TOTAL_NUMBER_OF_TASKS = 0
     for i in todo_list:
