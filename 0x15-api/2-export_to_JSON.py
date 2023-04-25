@@ -26,10 +26,12 @@ def make_json(users=None, todos=None):
 
 if __name__ == "__main__":
     url_todo = "https://jsonplaceholder.typicode.com/todos?userId={}".format(
-        sys.argv[1])
+        sys.argv[1]
+    )
     url_name = "https://jsonplaceholder.typicode.com/users?id={}".format(
-        sys.argv[1])
+        sys.argv[1]
+    )
     todo_list = requests.get(url_todo).json()
     name_response = requests.get(url_name).json()
-    
+
     make_json(name_response, todo_list)
