@@ -13,7 +13,7 @@ def make_json(users=None, todos=None):
     data = {}
     for i in todos:
         name = users[0].get("name")
-        i["username"] =  name
+        i["username"] = name
     data[sys.argv[1]] = todos
 
     with open(sys.argv[1] + ".json", "w") as f:
