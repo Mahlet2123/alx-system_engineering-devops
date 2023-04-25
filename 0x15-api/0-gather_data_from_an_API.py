@@ -21,8 +21,11 @@ if __name__ == "__main__":
     for todo in todo_response:
         if todo.get("completed") is True:
             completed.append(todo.get("title"))
-    print("Employee {} is done with tasks({}/{}):".
-          format(name_response.get("name"), len(completed), len(todo_response)))
+    print(
+        "Employee {} is done with tasks({}/{}):".format(
+            name_response.get("name"), len(completed), len(todo_response)
+        )
+    )
     for complete in completed:
         print("\t {}".format(complete))
 
