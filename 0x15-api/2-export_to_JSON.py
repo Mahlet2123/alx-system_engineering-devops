@@ -14,7 +14,7 @@ def make_json(users=None, todos=None):
     for i in todos:
         i["task"] = i.pop("title")
         i["completed"] = i.pop("completed")
-        name = users[0].get("name")
+        name = users[0].get("username")
         i["username"] = name
         del i["userId"]
         del i["id"]
