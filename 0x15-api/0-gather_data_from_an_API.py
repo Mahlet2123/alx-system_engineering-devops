@@ -8,11 +8,25 @@ import sys
 
 
 if __name__ == "__main__":
-    url = 'https://jsonplaceholder.typicode.com/posts/{}'.format(sys.argv[1])
-    response = requests.get(url)
-    res_json = response.json()
-    #EMPLOYEE_NAME = 
-    #NUMBER_OF_DONE_TASKS = 
-    #TOTAL_NUMBER_OF_TASKS = 
-    print(res_json)
-    print(response)
+    url_todo = "https://jsonplaceholder.typicode.com/todos?userId={}".format(
+        sys.argv[1])
+    url_name = "https://jsonplaceholder.typicode.com/users?id={}".format(
+        sys.argv[1])
+    todo_response = requests.get(url_todo)
+    name_response = requests.get(url_name).json()
+    todo_list = todo_response.json()
+    EMPLOYEE_NAME = name_response[0]["name"]
+    NUMBER_OF_DONE_TASKS = 0
+    TOTAL_NUMBER_OF_TASKS = 0
+    for i in todo_list:
+        if i.get("completed"):
+            NUMBER_OF_DONE_TASKS = NUMBER_OF_DONE_TASKS + 1
+        TOTAL_NUMBER_OF_TASKS = TOTAL_NUMBER_OF_TASKS + 1
+    print(
+        "Employee {} is done with tasks({}/{})".format(
+            EMPLOYEE_NAME, NUMBER_OF_DONE_TASKS, TOTAL_NUMBER_OF_TASKS
+        )
+    )
+    for i in todo_list:
+        title = i.get("title")
+        print("\t{}".format(title))
