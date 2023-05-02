@@ -1,7 +1,0 @@
-#!/usr/bin/env bash
-#creates a mysql dump of all MySQL dbs named backup.sql
-
-# Run the mysqldump command to backup all databases to backup.sql
-sudo mysqldump --user=root --password="$1" --all-databases > backup.sql
-# Create a tar archive of the backup file with the required filename format
-tar -cvzf "$(date +"%d-%m-%Y").tar.gz" backup.sql
