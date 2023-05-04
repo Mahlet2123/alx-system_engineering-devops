@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+# Bash script that will display information about subdomains.
+# Check if subdomain argument is provided
+if [ "$2" ]; then
+  subdomains=("$2")
+else
+  subdomains=("www" "lb-01" "web-01" "web-02")
+fi
+domain="$1"
+# Function to output record type and destination
+function get_record_info {
+  record_type=$(dig ".$1" | awk '/ANSWER SECTION:/ { getline; split($1, a, "."); {print $4}}')
+  destination=$(dig "$subdomains.$1" | awk '/ANSWER SECTION:/ { getline; split($1, a, "."); {print $5}}')
+  echo "The subdomain $2 is a $record_type record and points to $destination"
+}
+# Loop through subdomains and output record info
+for subdomain in "${subdomains[@]}"; do
+  get_record_info "$domain" "$subdomain"
+done
+
+echo"$(dig $1)"
