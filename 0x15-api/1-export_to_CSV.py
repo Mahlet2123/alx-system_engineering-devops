@@ -26,7 +26,7 @@ if __name__ == "__main__":
         sys.argv[1])
     url_name = "https://jsonplaceholder.typicode.com/users?id={}".format(
         sys.argv[1])
-    todo_list = requests.get(url_todo).json
+    todo_list = requests.get(url_todo).json()
     name_response = requests.get(url_name).json()
 
     make_csv(name_response, todo_list)
