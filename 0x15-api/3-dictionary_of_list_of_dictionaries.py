@@ -25,7 +25,6 @@ def make_all(users=None, todos=None):
         dict_[u] = data_list
         data_list = []
 
-
     with open("todo_all_employees.json", "w") as f:
         json.dump(dict_, f)
 
