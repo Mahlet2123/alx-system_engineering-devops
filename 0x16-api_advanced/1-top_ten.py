@@ -13,6 +13,7 @@ import json
 
 
 def top_ten(subreddit):
+    """Prints top 10 posts"""
     url = "https://www.reddit.com/r/{}/top.json".format(subreddit)
     headers = {"User-Agent": "Linux:0-subs:v1.0"}
     # Custom User-Agent header
@@ -22,12 +23,7 @@ def top_ten(subreddit):
         data = response.json()
         #print(json.dumps(data, indent=4))
         top_list = data["data"]["children"]
-        count = 0
-        for i in top_list:
-            if count >= 10:
-                break
+        for i in top_list[0:10]:
             print(i["data"]["title"])
-            count = count + 1
-
     else:
         print("None")
