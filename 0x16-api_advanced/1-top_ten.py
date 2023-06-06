@@ -9,7 +9,6 @@ If not a valid subreddit, print None.
 
 
 import requests
-import json
 
 
 def top_ten(subreddit):
