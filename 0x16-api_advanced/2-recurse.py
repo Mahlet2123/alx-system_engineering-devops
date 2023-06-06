@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Write a function that queries the Reddit API
+Write a  recursive function that queries the Reddit API
 and prints the titles of the first 10 hot posts
 listed for a given subreddit.
 
@@ -12,7 +12,7 @@ import requests
 import json
 
 
-def top_ten(subreddit):
+def recurse(subreddit, hot_list=[]):
     """Prints top 10 posts"""
     url = "https://www.reddit.com/r/{}/hot.json".format(subreddit)
     headers = {"User-Agent": "Linux:0-subs:v1.0"}
