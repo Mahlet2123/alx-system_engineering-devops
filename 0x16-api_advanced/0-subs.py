@@ -12,8 +12,8 @@ import requests
 
 
 def number_of_subscribers(subreddit):
-    url = f"https://www.reddit.com/r/{subreddit}/about.json"
-    headers = {"User-Agent": "My API Client"}
+    url = "https://www.reddit.com/r/{}/about.json".format(subreddit)
+    headers = {"User-Agent": "Linux:0-subs:v1.0"}
     # Custom User-Agent header
 
     response = requests.get(url, headers=headers)
