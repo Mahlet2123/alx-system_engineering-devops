@@ -21,7 +21,6 @@ def top_ten(subreddit):
     response = requests.get(url, headers=headers)
     if response.status_code == 200:
         data = response.json()
-        #print(json.dumps(data, indent=4))
         top_list = data["data"]["children"]
         for i in top_list[0:10]:
             print(i["data"]["title"])
