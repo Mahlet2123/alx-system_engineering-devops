@@ -17,7 +17,13 @@ def recurse(subreddit, hot_list=[], after=None):
     headers = {"User-Agent": "Linux:0-subs:v1.0"}
     # Custom User-Agent header
 
-    response = requests.get(url, headers=headers)
+    params = {'limit': 100}
+    if isinstance(after, str):
+        if after != "STOP":
+            params['after'] = after
+        else:
+            return hot_list
+    response = requests.get(url, headers=headers, params=params)
     posts = response.json().get('data', {}).get('children', {})
     if response.status_code != 200 or not posts:
         return None
