@@ -5,8 +5,5 @@ worker_pids=$(pgrep gunicorn)
 
 # Reload Gunicorn by sending a SIGHUP signal to each worker
 for pid in $worker_pids; do
-    echo "Reloading Gunicorn worker: $pid"
     kill -s HUP "$pid"
 done
-
-echo "Gunicorn reload completed"
